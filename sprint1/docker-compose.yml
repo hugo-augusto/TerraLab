@@ -1,4 +1,3 @@
-
 x-airflow-common: &airflow-common
   image: apache/airflow:2.9.1
   environment:
@@ -12,6 +11,8 @@ x-airflow-common: &airflow-common
     _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD}
   volumes:
     - ./dags:/opt/airflow/dags
+    - ../sprint2/dags:/opt/airflow/dags/sprint2
+    - ../sprint2/data:/opt/airflow/data
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID}:0"
