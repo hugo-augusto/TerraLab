@@ -4,6 +4,8 @@
 Aprender como o Airflow agenda e orquestra tarefas (DAGs), criando um pipeline ETL que lê um CSV, filtra registros de Aracaju e salva no PostgreSQL.
 
 ## Estrutura
+
+```
 sprint2/
 ├── dags/
 │   └── dag_aracaju.py
@@ -13,6 +15,7 @@ sprint2/
 │   ├── airflow_dag_sucesso.png
 │   └── postgres_resultado.png
 └── README.md
+```
 
 ## Como rodar
 
