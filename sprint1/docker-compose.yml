@@ -1,5 +1,5 @@
 x-airflow-common: &airflow-common
-  image: apache/airflow:2.9.1
+  build: .
   environment:
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
@@ -13,6 +13,8 @@ x-airflow-common: &airflow-common
     - ./dags:/opt/airflow/dags
     - ../sprint2/dags:/opt/airflow/dags/sprint2
     - ../sprint2/data:/opt/airflow/data
+    - ../sprint3/dags:/opt/airflow/dags/sprint3
+    - ../sprint3/data:/opt/airflow/data/sprint3
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID}:0"
